@@ -168,7 +168,9 @@ final class MonthCell: KVKCollectionViewCell {
                         label.textAlignment = .left
                         label.backgroundColor = event.color?.value ?? .systemGray
                         label.textColor = allDayStyle.textColor
-                        label.text = " \(event.title.timeline) "
+                        // Use month title if available, fallback to timeline
+                        let displayText = event.title.month ?? event.title.timeline
+                        label.text = " \(displayText) "
                         label.setRoundCorners(monthStyle.eventCorners, radius: monthStyle.eventCornersRadius)
                     }
                     

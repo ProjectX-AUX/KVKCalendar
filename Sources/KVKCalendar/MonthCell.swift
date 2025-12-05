@@ -146,7 +146,8 @@ final class MonthCell: KVKCollectionViewCell {
                     }
                     return
                 } else {
-                    if !event.isAllDay || Platform.currentInterface == .phone {
+                    let shouldShowAsRectangle = event.isAllDay || monthStyle.forceRectangleDisplay
+                    if !shouldShowAsRectangle || Platform.currentInterface == .phone {
                         label.attributedText = addIconBeforeLabel(eventList: [event],
                                                                   textAttributes: [.font: monthStyle.fontEventTitle,
                                                                                    .foregroundColor: monthStyle.colorEventTitle],

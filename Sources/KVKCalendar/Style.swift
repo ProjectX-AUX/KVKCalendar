@@ -536,6 +536,7 @@ public struct MonthStyle {
     public var eventCornersRadius: CGSize = CGSize(width: 5, height: 5)
     public var isHiddenDotInTitle: Bool = false
     public var isHiddenEventTitle: Bool = false
+    public var forceRectangleDisplay: Bool = false
     public var weekDayAlignment: NSTextAlignment = .right
     public var titleHeaderAlignment: NSTextAlignment = .left
     public var fontTitleHeader: UIFont = .boldSystemFont(ofSize: 30)
@@ -915,6 +916,7 @@ extension MonthStyle: Equatable {
         && compare(\.eventCornersRadius)
         && compare(\.isHiddenDotInTitle)
         && compare(\.isHiddenEventTitle)
+        && compare(\.forceRectangleDisplay)
         && compare(\.weekDayAlignment)
         && compare(\.titleHeaderAlignment)
         && compare(\.fontTitleHeader)
